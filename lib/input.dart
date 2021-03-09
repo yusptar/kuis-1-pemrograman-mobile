@@ -17,6 +17,7 @@ class Input extends StatelessWidget {
         Stack(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.all(20),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Input',
@@ -29,6 +30,7 @@ class Input extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.all(20),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Input',
@@ -39,9 +41,6 @@ class Input extends StatelessWidget {
               ),
             ),
           ],
-        ),
-        Container(
-          height: 20,
         ),
         TextFormField(
           controller: SpeedController,

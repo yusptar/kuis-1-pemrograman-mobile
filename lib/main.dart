@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kuis1/result.dart';
+import 'convertbutton.dart';
 import 'converttext.dart';
 import 'dropdown2.dart';
 import 'input.dart';
@@ -17,7 +18,7 @@ class MainSpeed extends State<SpeedConversion> {
   final Controller = TextEditingController();
   double _input = 0;
   String _valueDropDown = "Kilometer/Hours";
-  String _valueDropDown2 = "Kilometer/Hours";
+  String _valueDropDown2 = "Meter/Seconds";
   double _result = 0;
   List<String> List1 = [
     "Kilometer/Hours",
@@ -105,18 +106,8 @@ class MainSpeed extends State<SpeedConversion> {
                 height: 40,
               ),
               Input(SpeedController: Controller),
-              Container(
-                height: 20,
-              ),
               Result(result: _result),
-              /*Convert(convertHandler: rumusSuhu),
-              Container(
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  "Riwayat Konversi",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),*/
+              Convert(convertHandler: rumusKecepatan),
             ],
           ),
         ),

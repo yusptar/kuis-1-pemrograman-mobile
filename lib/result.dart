@@ -17,6 +17,7 @@ class Result extends StatelessWidget {
         Stack(
           children: <Widget>[
             Container(
+              margin: EdgeInsets.all(20),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Result',
@@ -29,6 +30,7 @@ class Result extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.all(20),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Result',
@@ -39,9 +41,6 @@ class Result extends StatelessWidget {
               ),
             ),
           ],
-        ),
-        Container(
-          height: 20,
         ),
         TextFormField(
           enabled: false,
