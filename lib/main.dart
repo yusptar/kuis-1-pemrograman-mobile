@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kuis1/result.dart';
+import 'converttext.dart';
+import 'dropdown2.dart';
 import 'input.dart';
 import 'dropdown.dart';
 
@@ -58,15 +60,19 @@ class MainSpeed extends State<SpeedConversion> {
         //listViewItem.add("$_valueDropDown : $_result");
       });
 
-  void onChanged(String changeValue) => setState(() {
-        _valueDropDown = changeValue;
-        rumusKecepatan();
-      });
+  void onChanged(String changeValue) {
+    setState(() {
+      _valueDropDown = changeValue;
+    });
+    rumusKecepatan();
+  }
 
-  void onChanged2(String changeValue) => setState(() {
-        _valueDropDown2 = changeValue;
-        rumusKecepatan();
-      });
+  void onChanged2(String changeValue) {
+    setState(() {
+      _valueDropDown2 = changeValue;
+    });
+    rumusKecepatan();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,26 +90,16 @@ class MainSpeed extends State<SpeedConversion> {
           margin: EdgeInsets.all(8),
           child: Column(
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: DropDownButton(
-                  listItem: List1,
-                  valueDropDown: _valueDropDown,
-                  methodScript: onChanged,
-                ),
+              DropDownButton(
+                listItem: List1,
+                valueDropDown: _valueDropDown,
+                methodScript: onChanged,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: DropdownButton<String>(
-                  items: List2.map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  value: _valueDropDown2,
-                  onChanged: onChanged2,
-                ),
+              ConvertText(),
+              DropDownButton2(
+                listItem2: List2,
+                valueDropDown2: _valueDropDown2,
+                methodScript2: onChanged2,
               ),
               Input(SpeedController: Controller),
               Result(result: _result),

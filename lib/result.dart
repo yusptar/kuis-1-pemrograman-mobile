@@ -16,7 +16,7 @@ class Result extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Hasil',
+            'Final Result',
             style: TextStyle(color: Colors.black, fontSize: 20),
           ),
           Text(

@@ -14,15 +14,18 @@ class DropDownButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      items: listItem.map((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-      value: valueDropDown,
-      onChanged: methodScript,
+    return SizedBox(
+      width: 200,
+      child: DropdownButton<String>(
+        items: listItem.map((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        value: valueDropDown,
+        onChanged: methodScript,
+      ),
     );
   }
 }
