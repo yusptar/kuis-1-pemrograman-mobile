@@ -22,7 +22,7 @@ class ConvertText extends StatelessWidget {
           'Convert to',
           style: TextStyle(
             fontSize: 18,
-            color: Colors.grey[300],
+            color: Colors.white,
           ),
         ),
       ],

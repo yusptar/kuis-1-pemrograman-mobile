@@ -77,7 +77,7 @@ class MainSpeed extends State<SpeedConversion> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Kuis 1 Pemrograman Mobile',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -87,7 +87,7 @@ class MainSpeed extends State<SpeedConversion> {
           title: Text("Speed Conversion"),
         ),
         body: Container(
-          margin: EdgeInsets.all(8),
+          margin: EdgeInsets.all(4),
           child: Column(
             children: [
               DropDownButton(
@@ -101,7 +101,13 @@ class MainSpeed extends State<SpeedConversion> {
                 valueDropDown2: _valueDropDown2,
                 methodScript2: onChanged2,
               ),
+              Container(
+                height: 40,
+              ),
               Input(SpeedController: Controller),
+              Container(
+                height: 20,
+              ),
               Result(result: _result),
               /*Convert(convertHandler: rumusSuhu),
               Container(
@@ -110,9 +116,6 @@ class MainSpeed extends State<SpeedConversion> {
                   "Riwayat Konversi",
                   style: TextStyle(fontSize: 20),
                 ),
-              ),
-              Expanded(
-                child: RiwayatKonversi(listViewItem: listViewItem),
               ),*/
             ],
           ),

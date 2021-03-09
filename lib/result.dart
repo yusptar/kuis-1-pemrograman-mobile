@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 
 class Result extends StatelessWidget {
   const Result({
@@ -11,21 +12,46 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Final Result',
-            style: TextStyle(color: Colors.black, fontSize: 20),
+    return Column(
+      children: [
+        Stack(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Result',
+                style: TextStyle(
+                    fontSize: 18,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 6
+                      ..color = Colors.black),
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Result',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          height: 20,
+        ),
+        TextFormField(
+          enabled: false,
+          decoration: InputDecoration(
+            hintText: '$result',
+            icon: Icon(Icons.send),
+            border: OutlineInputBorder(),
           ),
-          Text(
-            result.toStringAsFixed(4),
-            style: TextStyle(fontSize: 20),
-          ),
-        ],
-      ),
-      margin: EdgeInsets.all(8),
+        ),
+      ],
     );
   }
 }

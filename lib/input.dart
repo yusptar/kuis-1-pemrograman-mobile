@@ -12,15 +12,50 @@ class Input extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: SpeedController,
-      keyboardType: TextInputType.number,
-      inputFormatters: <TextInputFormatter>[
-        FilteringTextInputFormatter.digitsOnly
+    return Column(
+      children: [
+        Stack(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Input',
+                style: TextStyle(
+                    fontSize: 18,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 6
+                      ..color = Colors.black),
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Input',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          height: 20,
+        ),
+        TextFormField(
+          controller: SpeedController,
+          keyboardType: TextInputType.number,
+          inputFormatters: <TextInputFormatter>[
+            FilteringTextInputFormatter.digitsOnly
+          ],
+          decoration: InputDecoration(
+            hintText: 'Input Data',
+            icon: Icon(Icons.input),
+            border: OutlineInputBorder(),
+          ),
+        ),
       ],
-      decoration: InputDecoration(
-        hintText: 'Inputkan Angka',
-      ),
     );
   }
 }
